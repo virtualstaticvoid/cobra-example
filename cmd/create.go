@@ -19,6 +19,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // createCmd represents the create command
@@ -33,6 +34,23 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("create called")
+
+		fmt.Println("--- Final configuration once command is executed ---")
+		for s, i := range viper.AllSettings() {
+			fmt.Printf("\t%s = %s\n", s, i)
+		}
+		fmt.Println("---")
+
+		// check if global flag was set
+		if verbose {
+			fmt.Println("verbose is on!")
+		}
+
+		// check command flag
+		if b, _ := cmd.Flags().GetString("foo"); len(b) > 0 {
+			fmt.Printf("foo is %q\n", b)
+		}
+
 	},
 }
 
