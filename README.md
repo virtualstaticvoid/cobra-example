@@ -1,6 +1,8 @@
 # Example Application
 
-See [cobra/README.md](https://github.com/spf13/cobra/blob/master/cobra/README.md) for detailed information.
+Example Go Application illustrating use of the [cobra][cobra] and [viper][viper] packages.
+
+See [cobra/README.md][cobra-readme] for detailed information.
 
 ## Setup
 
@@ -21,7 +23,9 @@ See the git commit log of this repository for each step, or follow these instruc
 * Generate `cobra` boilerplate code
 
   ```
-  cobra init --pkg-name go.virtualstaticvoid.com/prototype/cobra-app --author "Chris Stefano <virtualstaticvoid@gmail.com>" --license MIT
+  cobra init --pkg-name go.virtualstaticvoid.com/prototype/cobra-app \
+             --author "Chris Stefano <virtualstaticvoid@gmail.com>" \
+             --license MIT
   ```
 
 * Create `cobra` commands
@@ -44,11 +48,11 @@ See the git commit log of this repository for each step, or follow these instruc
 
   See git commit history for the complete list of changes.
 
-# Usage
+## Usage
 
 In each example, run the command and observe the console output.
 
-## Defaults
+### Defaults
 
 ```
 go run main.go config
@@ -58,7 +62,7 @@ go run main.go config
 go run main.go config create
 ```
 
-# From Environment Variables
+### From Environment Variables
 
 ```
 FOO=FROM-ENV go run main.go config
@@ -68,7 +72,7 @@ FOO=FROM-ENV go run main.go config
 FOO=FROM-ENV go run main.go config create
 ```
 
-# From Configuration File
+### From Configuration File
 
 ```
 go run main.go --config .cobra-example.yaml config
@@ -85,4 +89,11 @@ go run main.go --config .cobra-example.yaml config create
 ## License
 
 The MIT License (MIT) - Copyright © 2021 Chris Stefano
+
 See [LICENSE](LICENSE) for details.
+
+<!-- links -->
+
+[cobra-readme]: https://github.com/spf13/cobra/blob/master/cobra/README.md
+[cobra]: https://github.com/spf13/cobra
+[viper]: https://github.com/spf13/viper
