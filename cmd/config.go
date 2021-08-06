@@ -19,6 +19,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // configCmd represents the config command
@@ -33,6 +34,23 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("config called")
+
+		fmt.Println("--- Final configuration once command is executed ---")
+		for s, i := range viper.AllSettings() {
+			fmt.Printf("\t%s = %s\n", s, i)
+		}
+		fmt.Println("---")
+
+		// check if global flag was set
+		if verbose {
+			fmt.Println("verbose is on!")
+		}
+
+		// check command flag
+		if b, _ := cmd.Flags().GetString("foo"); len(b) > 0 {
+			fmt.Printf("foo is %q\n", b)
+		}
+
 	},
 }
 
@@ -43,9 +61,13 @@ func init() {
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// configCmd.PersistentFlags().String("foo", "", "A help for foo")
+	configCmd.PersistentFlags().String("foo", "bar", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// configCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	// bind the configuration to file/environment values
+	cobra.CheckErr(viper.BindPFlag("foo", configCmd.PersistentFlags().Lookup("foo")))
+	viper.SetDefault("foo", "bar")
 }
