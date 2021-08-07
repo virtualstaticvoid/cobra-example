@@ -38,13 +38,13 @@ See the git commit log of this repository for each step, or follow these instruc
 
 * Make manual edits to respective command files.
 
-  * [3d16ac3][_3d16ac3] add `verbose` global flag to `cmd/root.go`
-  * [1e2f07f][_1e2f07f] add current working directory to the configuration file search path
-  * [5cf55c8][_5cf55c8] print out file configuration settings in `cmd/root.go` command initialisation
-  * [028ee2b][_028ee2b] add "foo" switch to the `cmd/config.go` command and configuration bindings
-  * [028ee2b][_028ee2b] print out final configuration settings in the `config` command handler
-  * [0d97ee3][_0d97ee3] print out final configuration settings in the `config create` command handler
-  * [3276a49][_3276a49] add an example confguration file
+  * [`3d16ac3`][_3d16ac3] add `verbose` global flag to `cmd/root.go`
+  * [`1e2f07f`][_1e2f07f] add current working directory to the configuration file search path
+  * [`5cf55c8`][_5cf55c8] print out file configuration settings in `cmd/root.go` command initialisation
+  * [`028ee2b`][_028ee2b] add "foo" switch to the `cmd/config.go` command and configuration bindings
+  * [`028ee2b`][_028ee2b] print out final configuration settings in the `config` command handler
+  * [`0d97ee3`][_0d97ee3] print out final configuration settings in the `config create` command handler
+  * [`3276a49`][_3276a49] add an example confguration file
 
   See git commit history for the complete list of changes.
 
