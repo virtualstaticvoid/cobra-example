@@ -20,12 +20,20 @@ See the git commit log of this repository for each step, or follow these instruc
   go get github.com/spf13/cobra/cobra@latest
   ```
 
+* Create `$HOME/.cobra.yaml` configuration file
+
+  ```
+  cat > $HOME/.cobra.yaml << EOF
+  author: Chris Stefano <virtualstaticvoid@gmail.com>
+  license: MIT
+  year: 2021
+  EOF
+  ```
+
 * Generate `cobra` boilerplate code
 
   ```
-  cobra init --pkg-name go.virtualstaticvoid.com/prototype/cobra-app \
-             --author "Chris Stefano <virtualstaticvoid@gmail.com>" \
-             --license MIT
+  cobra init --pkg-name go.virtualstaticvoid.com/prototype/cobra-app
   ```
 
 * Create `cobra` commands
@@ -81,10 +89,6 @@ go run main.go --config .cobra-example.yaml config
 ```
 go run main.go --config .cobra-example.yaml config create
 ```
-
-## TODO
-
-* Figure out how to persist the author and license information when running `cobra ...` commands to generate code.
 
 ## License
 
